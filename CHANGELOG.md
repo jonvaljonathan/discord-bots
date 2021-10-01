@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.0-SNAPSHOT
+
+1. Small refactor of degen messaging
+
 ## 1.6.1-RELEASE (2021-10-01)
 
 1. Reference production environment files

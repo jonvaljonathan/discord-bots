@@ -22,7 +22,11 @@ export default class implements DiscordEvent {
 			console.error('Retrieving member partial failed');
 			return;
 		}
-		
+
+		// Only enabled for BanklessDAO server
+		if (guildMember.guild.id !== process.env.DISCORD_SERVER_ID) {
+			return false;
+		}
 		if (oldMember.nickname !== newMember.nickname && await ServiceUtils.runUsernameSpamFilter(newMember as GuildMember)) {
 			return;
 		}

@@ -21,9 +21,11 @@ export default class implements DiscordEvent {
 
 		if (oldUser.username !== newUser.username) {
 			const guildMember = await ServiceUtils.getGuildMemberFromUser(newUser as User, process.env.DISCORD_SERVER_ID);
-			if (await ServiceUtils.runUsernameSpamFilter(guildMember)) {
-				return;
+			// Only enabled for BanklessDAO server
+			if (guildMember.guild.id !== process.env.DISCORD_SERVER_ID) {
+				return false;
 			}
+			await ServiceUtils.runUsernameSpamFilter(guildMember);
 		}
 	}
 }
