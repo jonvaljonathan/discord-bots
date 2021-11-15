@@ -5,7 +5,6 @@ import {
 	SlashCommand,
 	SlashCreator,
 } from 'slash-create';
-import roleIds from '../../service/constants/roleIds';
 import ServiceUtils from '../../utils/ServiceUtils';
 import CoordinapeSendForm from '../../service/coordinape/CoordinapeSendForm';
 import ValidationError from '../../errors/ValidationError';
@@ -26,7 +25,7 @@ module.exports = class Coordinape extends SlashCommand {
 		super(creator, {
 			name: 'coordinape',
 			description: 'Commands to manage Coordinape rounds',
-			guildIDs: [discordServerIds.banklessDAO, discordServerIds.discordBotGarage],
+			guildIDs: [process.env.DISCORD_SERVER_ID, discordServerIds.banklessDAO, discordServerIds.discordBotGarage],
 			options: [
 				{
 					name: 'form-request',
@@ -112,33 +111,7 @@ module.exports = class Coordinape extends SlashCommand {
 				usages: 50,
 				duration: 1,
 			},
-			defaultPermission: false,
-			permissions: {
-				[discordServerIds.banklessDAO]: [
-					{
-						type: ApplicationCommandPermissionType.ROLE,
-						id: roleIds.level2,
-						permission: true,
-					},
-					{
-						type: ApplicationCommandPermissionType.ROLE,
-						id: roleIds.level1,
-						permission: true,
-					},
-				],
-				[discordServerIds.discordBotGarage]: [
-					{
-						type: ApplicationCommandPermissionType.ROLE,
-						id: roleIds.level2,
-						permission: true,
-					},
-					{
-						type: ApplicationCommandPermissionType.ROLE,
-						id: roleIds.level1,
-						permission: true,
-					},
-				],
-			},
+			defaultPermission: true,
 		});
 	}
 
@@ -164,7 +137,7 @@ module.exports = class Coordinape extends SlashCommand {
 			command = Ungive(guildMember, ctx);
 			break;
 		case 'receipts':
-			command = Receipts(guildMember, ctx );
+			command = Receipts(guildMember, ctx);
 			break;
 		case 'discord':
 			command = Discord(ctx);
