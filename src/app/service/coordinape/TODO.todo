@@ -21,5 +21,11 @@ The commands all can be executed in group chats/PM , the bot is exclusively link
 ";
 
 -- figure out how to communicate with Coordinape backend
--- make some types for data recieved from Coordinape
+-- Finish types for data recieved from Coordinape
 -- request, parse, and return data from Coordinape
+
+Bot Controller Link:
+https://github.com/coordinape/coordinape-backend/blob/main/app/Http/Controllers/BotController.php
+
+Google Doc Link:
+https://docs.google.com/document/d/14-lBgw_lwIudYEq_0mcrFuKHc4je8hPkZTSznDUhTaE/edit#heading=h.epvzrx9cc4er
