@@ -4,10 +4,11 @@ import axios, { AxiosRequestConfig } from 'axios';
 import Log, { LogUtils } from '../../utils/Log';
 import { handleNoEpochs } from './HandleNoEpoc';
 
+// /ungive - Deallocate all your existing tokens that you have given
 export const Ungive = async (guildMember: GuildMember, ctx: CommandContext) => {
 	const config: AxiosRequestConfig = {
 		method: 'post',
-		url: 'https://api.coordinape.com/',
+		url: 'https://api.coordinape.com/ungive',
 		headers: {
 		},
 		data: {
@@ -16,7 +17,7 @@ export const Ungive = async (guildMember: GuildMember, ctx: CommandContext) => {
 	};
 	try {
 		const response = await axios.post('/ungive', config);
-		Log.info('Coordinape Gives response', {
+		Log.info('Coordinape Ungive response', {
 			indexMeta: true,
 			meta: {
 				data: response.data,

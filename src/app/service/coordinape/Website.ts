@@ -1,5 +1,6 @@
 import { CommandContext } from 'slash-create';
 
+// /website - link to website
 export const Website = async (ctx: CommandContext): Promise<any> => {
 	const WebsiteEmbed = {
 		color: 0x0099ff,

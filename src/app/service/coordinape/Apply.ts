@@ -1,5 +1,7 @@
 import { CommandContext } from 'slash-create';
 
+
+// /apply - typeform link to join coordinape and give out grants through our application
 export const Apply = async (ctx: CommandContext): Promise<any> => {
 	const ApplyEmbed = {
 		color: 0x0099ff,
