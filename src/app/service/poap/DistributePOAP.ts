@@ -11,11 +11,7 @@ import { getBufferForFailedParticipants } from './EndPOAP';
 import MongoDbUtils from '../../utils/MongoDbUtils';
 import ServiceUtils from '../../utils/ServiceUtils';
 
-<<<<<<< HEAD
 export default async (ctx: CommandContext, guildMember: GuildMember, type: string, event: string): Promise<any> => {
-=======
-export default async (ctx: CommandContext, guildMember: GuildMember, type: string, event: string, code?: string): Promise<any> => {
->>>>>>> 9be511a (WIP)
 	if (ctx.guildID == undefined) {
 		await ctx.send('Please try ending poap event within discord channel');
 		return;
@@ -53,7 +49,7 @@ export default async (ctx: CommandContext, guildMember: GuildMember, type: strin
 		Log.debug('all poap successfully delivered');
 		return;
 	}
-	await POAPUtils.setupFailedAttendeesDelivery(guildMember, failedPOAPsList, event, code, ctx);
+	await POAPUtils.setupFailedAttendeesDelivery(guildMember, failedPOAPsList, event, ctx);
 	Log.debug('poap distribution complete');
 	return;
 };

@@ -193,7 +193,6 @@ const POAPUtils = {
 				discordUserTag: failedAttendee.discordUserTag,
 				discordServerId: `${guildMember.guild.id}`,
 				discordServerName: guildMember.guild.name,
-				claimCode: `${code}`,
 				poapLink: `${failedAttendee.poapLink}`,
 				expiresAt: (dayjs().add(1, 'month')).toISOString(),
 			};
