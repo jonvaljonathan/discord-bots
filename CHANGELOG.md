@@ -15,7 +15,11 @@
    - FQ rescue call service
    - POAP claim link expiration reminder
 6. Fix node version heroku deployment
-   
+7. Add /afk feature
+   - bot auto responds that mentioned users are AFK
+   - bot sends AFK users DM's with links to their messages
+8. Add Datadog tracer
+
 ## 1.9.3-RELEASE (2021-11-12)
 
 1. Add try/catch block to buffering
